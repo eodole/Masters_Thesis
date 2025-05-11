@@ -1,0 +1,9 @@
+1. county_data_investigation_7Apr.R
+    initial data exploration for county data including correlations between variables
+
+2. data_exploration.R
+    tried to read in the county.mat data, and quanitfy some missingness
+
+3. pest_wrangeling.R
+    used the raw pesticide data to create the pesticide dataset by converting to a wide format 
+    note that some fips counties are missing. 

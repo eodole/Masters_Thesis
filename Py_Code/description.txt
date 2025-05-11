@@ -1,0 +1,3 @@
+1. load_data.ipynb
+    file to create the full_dataset_vx.csv file(s)
+    has info about missing data when combining county matrx and pesticides 

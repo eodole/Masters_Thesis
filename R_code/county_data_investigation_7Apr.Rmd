@@ -1,0 +1,85 @@
+---
+title: "County Data"
+author: "Leona Odole"
+date: "2025-04-07"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
+library(dplyr)
+library(R.matlab)
+library(readxl)
+library(reshape2)
+```
+
+So first I want to have the data be clean and in a workable format
+
+```{r}
+countydataraw <- readMat("./data/CountyMatrix_raw.mat")
+countydata <- as.data.frame(countydataraw$d)
+countydata <-`colnames<-`(countydata, colnames)
+countydata$FIPS <- countydataraw$fips
+```
+
+Matlab stores NA values as NANs so I want to convert them 
+
+```{r}
+# since the dataset is small I will just go through it one by one even though its inefficient
+
+# this funciton reassigns NaNs to NAs, could later repurpose to handle any replacement 
+NaNtoNA <- function(dataset){
+  copyds <- dataset
+  for(row in 1:nrow(dataset)){
+    for(col in 1:ncol(dataset)){
+      if (is.nan(dataset[row,col])){
+        copyds[row,col] <- NA
+      }
+    }
+  }
+  return(copyds)
+}
+
+```
+
+
+```{r}
+countydata <- NaNtoNA(countydata)
+```
+
+Just from inspecting the data it seems like most of the missing data is in the medicare reporting section. 
+
+Question: For which diseases do we have a complete dataset? 
+
+```{r}
+names(which(colSums(is.na(countydata)) > 0))
+
+```
+So everything has missing data except for the fips column (the labels of the counties) some of it like lat long could be completed manually
+
+Question: What percentage of the data is missing? 
+
+```{r}
+sum(is.na(countydata))/(nrow(countydata)*ncol(countydata))
+```
+
+approx 18 % of the data is missing 
+
+
+Q: How are the different variables correlated with one another? 
+```{r}
+cormat <- round(cor(countydata, use = "pairwise.complete.obs"),2)
+melted_cor <- melt(cormat)
+ggplot(data = melted_cor, aes(x=Var1, y=Var2, fill=value)) + 
+  geom_tile(color = "white")+
+ scale_fill_gradient2(low = "blue", high = "red", mid = "white", 
+   midpoint = 0, limit = c(-1,1), space = "Lab", 
+   name="Pearson\nCorrelation") +
+  theme_minimal()+ 
+ theme(axis.text.x = element_text(angle = 90, vjust = 1, 
+    size = 12, hjust = 1))
+
+```
+There aren't really a lot of strong correlations outside the the racial/demographic factors I suspect because they are dependent on one another. 
+Something else to note about the data is that the disease data is mostly given either in percentage (CDC data) or from the wonderdata i think per 1000? 

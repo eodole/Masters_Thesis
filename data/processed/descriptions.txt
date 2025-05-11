@@ -1,0 +1,6 @@
+1. full_dataset_v1.csv
+    Dataset that combines CountMatrix_raw.mat and pesticide_data_2010.csv
+
+2. pesticide_data_2010.csv
+    information from EPest.count.estimates.2010.txt presented in a wide format,
+    it uses the low estimates for pesticides.
