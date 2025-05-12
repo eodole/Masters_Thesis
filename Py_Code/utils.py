@@ -1,5 +1,6 @@
 import numpy as np 
 
+
 # generator functions 
 
 def f_b(a): 
@@ -39,9 +40,15 @@ def generate_full_data(batch, save_data = False, file_name = None):
         np.savetxt(f"./gen_data/{file_name}.csv", data, delimiter=",")
     return data 
 
-
-def induce_missing_data(data, prob): 
+# function to induce MCAR data with simple uniform distb
+def induce_missing_data(cell, prob): 
     '''
-    data: np array dataset to induce missingness on 
+    cell: single cell array dataset to induce missingness on 
     prob: float [0,1] for prob that any one cell is missing 
     '''
+    if np.random.uniform() <= prob: 
+        return None 
+    else: 
+        return cell 
+
+v_induce_missing_data = np.vectorize(induce_missing_data, excluded = {2, "prob"})
