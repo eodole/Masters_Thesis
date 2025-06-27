@@ -48,14 +48,39 @@ from fancyimpute import SoftImpute
     
 # print(l.values())
 
-##  1) Import Data 
-ground_truth = np.loadtxt("/Users/eodole/Desktop/Masters_Thesis/Py_Code/gen_data/test2.csv", delimiter = ",")
+# ##  1) Import Data 
+# ground_truth = np.loadtxt("/Users/eodole/Desktop/Masters_Thesis/Py_Code/gen_data/test2.csv", delimiter = ",")
 
-## Induce Missingness 
-X = utils.v_induce_missing_data(ground_truth, 0.2)
+# ## Induce Missingness 
+# X = utils.v_induce_missing_data(ground_truth, 0.2)
 
 
-soft_imputer = SoftImpute()
-# X, mask = soft_imputer.prepare_input_data(X)
-# soft_imp_data = soft_imputer.solve(X, mask)
-soft_imputer.fit_transform(X)
+# soft_imputer = SoftImpute()
+# # X, mask = soft_imputer.prepare_input_data(X)
+# # soft_imp_data = soft_imputer.solve(X, mask)
+# soft_imputer.fit_transform(X)
+
+
+import pydot
+from IPython.display import Image, display
+
+# Create a directed graph in pydot
+dot = pydot.Dot(graph_type='digraph')
+
+# Define the edges with weights
+edges = [("A", "B", 2), ("A", "C", 3), ("C", "D", -1)]
+
+# Add edges and nodes with attributes
+for src, dst, weight in edges:
+    edge = pydot.Edge(src, dst, label=str(weight), color='red', fontsize='10')
+    dot.add_edge(edge)
+
+    # Ensure all nodes are styled
+    for node_name in (src, dst):
+        if not dot.get_node(node_name):
+            node = pydot.Node(node_name, style="filled", fillcolor="white", color="black", shape="circle", fontsize='12')
+            dot.add_node(node)
+
+# Render and display the graph as an image
+dot.write_png('graph.png')
+display(Image(filename='graph.png'))
