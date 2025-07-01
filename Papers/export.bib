@@ -1,0 +1,252 @@
+@article{Cornish2020,
+   abstract = {We show that normalising flows become pathological when used to model targets whose supports have complicated topologies. In this scenario, we prove that a flow must become arbitrarily numerically noninvertible in order to approximate the target closely. This result has implications for all flow-based models, and especially residual flows (ResFlows), which explicitly control the Lipschitz constant of the bijection used. To address this, we propose continuously indexed flows (CIFs), which replace the single bijection used by normalising flows with a continuously indexed family of bijec-tions, and which can intuitively "clean up" mass that would otherwise be misplaced by a single bijection. We show theoretically that CIFs are not subject to the same topological limitations as normalising flows, and obtain better empirical performance on a variety of models and benchmarks.},
+   author = {Rob Cornish and Anthony Caterini and George Deligiannidis and Arnaud Doucet},
+   title = {Relaxing Bijectivity Constraints with Continuously Indexed Normalising Flows},
+   year = {2020}
+}
+@article{Mazumder2010,
+   abstract = {We use convex relaxation techniques to provide a sequence of regularized low-rank solutions for large-scale matrix completion problems. Using the nuclear norm as a regularizer, we provide a simple and very efficient convex algorithm for minimizing the reconstruction error subject to a bound on the nuclear norm. Our algorithm SOFT-IMPUTE iteratively replaces the missing elements with those obtained from a soft-thresholded SVD. With warm starts this allows us to efficiently compute an entire regularization path of solutions on a grid of values of the regularization parameter. The computationally intensive part of our algorithm is in computing a low-rank SVD of a dense matrix. Exploiting the problem structure, we show that the task can be performed with a complexity of order linear in the matrix dimensions. Our semidefinite-programming algorithm is readily scalable to large matrices; for example SOFT-IMPUTE takes a few hours to compute low-rank approximations of a 10 6 × 10 6 incomplete matrix with 10 7 observed entries, and fits a rank-95 approximation to the full Netflix training set in 3.3 hours. Our methods achieve good training and test errors and exhibit superior timings when compared to other competitive state-of-the-art techniques.},
+   author = {Rahul Mazumder and Trevor Hastie and Hastie@stanford Edu and Robert Tibshirani and Tibs@stanford Edu and Tommi Jaakkola},
+   journal = {Journal of Machine Learning Research},
+   keywords = {collaborative filtering,large scale convex optimization,netflix prize,nuclear norm,spectral regularization},
+   pages = {2287-2322},
+   title = {Spectral Regularization Algorithms for Learning Large Incomplete Matrices},
+   volume = {11},
+   year = {2010}
+}
+@inproceedings{,
+   author = {Luc Brun},
+   title = {Graph Edit Distance: Basics and History}
+}
+@article{,
+   abstract = {Although kernel measures of independence have been widely applied in machine learning (notably in kernel ICA), there is as yet no method to determine whether they have detected statistically significant dependence. We provide a novel test of the independence hypothesis for one particular kernel independence measure, the Hilbert-Schmidt independence criterion (HSIC). The resulting test costs O(m 2), where m is the sample size. We demonstrate that this test outperforms established contingency table and functional correlation-based tests, and that this advantage is greater for multivariate data. Finally, we show the HSIC test also applies to text (and to structured data more generally), for which no other independence test presently exists.},
+   author = {Arthur Gretton and Kenji Fukumizu and Choon Hui Teo and Le Song and Bernhard Schölkopf and Alexander J Smola},
+   title = {A Kernel Statistical Test of Independence},
+   url = {www.kyb.mpg.de/bs/people/arthur/indep.htm}
+}
+@article{Fyrbiak2020,
+   abstract = {Hardware reverse engineering is a powerful and universal tool for both security engineers and adversaries. From a defensive perspective, it allows for detection of intellectual property infringements and hardware Trojans, while it simultaneously can be used for product piracy and malicious circuit manipulations. From a designer's perspective, it is crucial to have an estimate of the costs associated with reverse engineering, yet little is known about this, especially when dealing with obfuscated hardware. The contribution at hand provides new insights into this problem, based on algorithms with sound mathematical underpinnings. Our contributions are threefold: First, we present the graph similarity problem for automating hardware reverse engineering. To this end, we improve several state-of-the-art graph similarity heuristics with optimizations tailored to the hardware context. Second, we propose a novel algorithm based on multiresolutional spectral analysis of adjacency matrices. Third, in three extensively evaluated case studies, namely (1) gate-level netlist reverse engineering, (2) hardware Trojan detection, and (3) assessment of hardware obfuscation, we demonstrate the practical nature of graph similarity algorithms.},
+   author = {Marc Fyrbiak and Sebastian Wallat and Sascha Reinhard and Nicolai Bissantz and Christof Paar},
+   doi = {10.1109/TC.2019.2953752},
+   issn = {15579956},
+   issue = {4},
+   journal = {IEEE Transactions on Computers},
+   keywords = {Graph similarity,hardware obfuscation assessment,hardware reverse engineering,hardware trojan},
+   month = {4},
+   pages = {505-519},
+   publisher = {IEEE Computer Society},
+   title = {Graph Similarity and its Applications to Hardware Security},
+   volume = {69},
+   year = {2020}
+}
+@article{Koutra2011,
+   abstract = {We deal with two independent but related problems, those of graph similarity and subgraph matching, which are both important practical problems useful in several fields of science, engineering and data analysis. For the problem of graph similarity, we develop and test a new framework for solving the problem using belief propagation and related ideas. For the subgraph matching problem, we develop a new algorithm based on existing techniques in the bioinformatics and data mining literature, which uncover periodic or infrequent matchings. We make substantial progress compared to the existing methods for both problems.},
+   author = {Danai Koutra and Ankur Parikh and Aaditya Ramdas and Jing Xiang},
+   title = {Algorithms for Graph Similarity and Subgraph Matching},
+   year = {2011}
+}
+@misc{,
+   title = {Analytical Paleobiology Tutorials 2018},
+   url = {https://www.cnidaria.nat.uni-erlangen.de/shortcourse/S4/APW_Tutorials_Partial_Correlation.html}
+}
+@inproceedings{,
+   author = {Michał Kowalewski},
+   booktitle = {Analytical Paleobiology Workshop },
+   keywords = {partial correlation,slides},
+   title = {Partial Correlation}
+}
+@article{MarkusKalisch2024,
+   abstract = {Depends R (>= 3.5.0) LinkingTo Rcpp (>= 0.11.0), RcppArmadillo, BH},
+   author = {Maintainer Markus Kalisch},
+   keywords = {Imports stats,Matrix,RBGL,Rcpp,Rgraphviz,abind,bdsmatrix,clue Suggests MASS,corpcor,dagitty NeedsCompilation yes Encoding UTF-8,fastICA,ggm,ggplot2,graph,graphics,huge,igraph,methods,mvtnorm,robustbase,sfsmisc (>= 10-26),utils,vcd},
+   title = {Package 'pcalg' Title Methods for Graphical Models and Causal Inference Description Functions for causal structure learning and causal inference using graphical models. The main algorithms for causal structure learning are PC (for observational data without hidden variables), FCI and RFCI (for observational data with hidden variables), and GIES (for a mix of data from observational studies},
+   url = {https://pcalg.r-forge.r-project.org/},
+   year = {2024}
+}
+@article{Fisher1921,
+   author = {R. A. Fisher},
+   journal = {Metron},
+   title = {On the’probable error’of a coefficient of correlation deduced from a small sample.},
+   year = {1921}
+}
+@article{Witte2022,
+   abstract = {Causal discovery algorithms estimate causal graphs from observational data. This can provide a valuable complement to analyses focusing on the causal relation between individual treatment-outcome pairs. Constraint-based causal discovery algorithms rely on conditional independence testing when building the graph. Until recently, these algorithms have been unable to handle missing values. In this article, we investigate two alternative solutions: test-wise deletion and multiple imputation. We establish necessary and sufficient conditions for the recoverability of causal structures under test-wise deletion, and argue that multiple imputation is more challenging in the context of causal discovery than for estimation. We conduct an extensive comparison by simulating from benchmark causal graphs: as one might expect, we find that test-wise deletion and multiple imputation both clearly outperform list-wise deletion and single imputation. Crucially, our results further suggest that multiple imputation is especially useful in settings with a small number of either Gaussian or discrete variables, but when the dataset contains a mix of both neither method is uniformly best. The methods we compare include random forest imputation and a hybrid procedure combining test-wise deletion and multiple imputation. An application to data from the IDEFICS cohort study on diet- and lifestyle-related diseases in European children serves as an illustrating example.},
+   author = {Janine Witte and Ronja Foraita and Vanessa Didelez},
+   doi = {10.1002/SIM.9535},
+   issn = {1097-0258},
+   issue = {23},
+   journal = {Statistics in Medicine},
+   keywords = {MICE,PC,algorithm,causal inference,causal search,missing values,structure learning},
+   month = {10},
+   pages = {4716-4743},
+   pmid = {35908775},
+   publisher = {John Wiley \& Sons, Ltd},
+   title = {Multiple imputation and test-wise deletion for causal discovery with incomplete cohort data},
+   volume = {41},
+   url = {https://onlinelibrary.wiley.com/doi/full/10.1002/sim.9535 https://onlinelibrary.wiley.com/doi/abs/10.1002/sim.9535 https://onlinelibrary.wiley.com/doi/10.1002/sim.9535},
+   year = {2022}
+}
+@article{,
+   abstract = {In recent years, diffusion models have achieved remarkable success in various domains of artificial intelligence, such as image synthesis, super-resolution, and 3D molecule generation. However, the application of diffusion models in graph learning has received relatively little attention. In this paper, we address this gap by investigating the use of diffusion models for unsupervised graph representation learning. We begin by identifying the anisotropic structures of graphs and a crucial limitation of the vanilla forward diffusion process in learning anisotropic structures. This process relies on continuously adding an isotropic Gaussian noise to the data, which may convert the anisotropic signals to noise too quickly. This rapid conversion hampers the training of denoising neural networks and impedes the acquisition of semantically meaningful representations in the reverse process. To address this challenge, we propose a new class of models called directional diffusion models. These models incorporate data-dependent, anisotropic, and directional noises in the forward diffusion process. To assess the efficacy of our proposed models, we conduct extensive experiments on 12 publicly available datasets, focusing on two distinct graph representation learning tasks. The experimental results demonstrate the superiority of our models over state-of-the-art baselines, indicating their effectiveness in capturing meaningful graph representations. Our studies not only provide valuable insights into the forward process of diffusion models but also highlight the wide-ranging potential of these models for various graph-related tasks.},
+   author = {Run Yang and Yuling Yang and Fan Zhou and Qiang Sun},
+   title = {Directional diffusion models for graph representation learning}
+}
+@article{Galimard2018,
+   abstract = {Background: Multiple imputation by chained equations (MICE) requires specifying a suitable conditional imputation model for each incomplete variable and then iteratively imputes the missing values. In the presence of missing not at random (MNAR) outcomes, valid statistical inference often requires joint models for missing observations and their indicators of missingness. In this study, we derived an imputation model for missing binary data with MNAR mechanism from Heckman's model using a one-step maximum likelihood estimator. We applied this approach to improve a previously developed approach for MNAR continuous outcomes using Heckman's model and a two-step estimator. These models allow us to use a MICE process and can thus also handle missing at random (MAR) predictors in the same MICE process. Methods: We simulated 1000 datasets of 500 cases. We generated the following missing data mechanisms on 30% of the outcomes: MAR mechanism, weak MNAR mechanism, and strong MNAR mechanism. We then resimulated the first three cases and added an additional 30% of MAR data on a predictor, resulting in 50% of complete cases. We evaluated and compared the performance of the developed approach to that of a complete case approach and classical Heckman's model estimates. Results: With MNAR outcomes, only methods using Heckman's model were unbiased, and with a MAR predictor, the developed imputation approach outperformed all the other approaches. Conclusions: In the presence of MAR predictors, we proposed a simple approach to address MNAR binary or continuous outcomes under a Heckman assumption in a MICE procedure.},
+   author = {Jacques Emmanuel Galimard and Sylvie Chevret and Emmanuel Curis and Matthieu Resche-Rigon},
+   doi = {10.1186/S12874-018-0547-1/TABLES/7},
+   issn = {14712288},
+   issue = {1},
+   journal = {BMC Medical Research Methodology},
+   keywords = {Heckman's model,Missing data,Missing not at random (MNAR),Multiple imputation by chained equation (MICE),Sample selection method},
+   month = {8},
+   pages = {1-13},
+   pmid = {30170561},
+   publisher = {BioMed Central Ltd.},
+   title = {Heckman imputation models for binary or continuous MNAR outcomes and MAR predictors},
+   volume = {18},
+   url = {https://bmcmedresmethodol.biomedcentral.com/articles/10.1186/s12874-018-0547-1},
+   year = {2018}
+}
+@misc{,
+   title = {A Method of Estimation of Missing Values in Multivariate Data Suitable for use with an Electronic Computer on JSTOR},
+   url = {https://www.jstor.org/stable/2984099}
+}
+@article{,
+   abstract = {Conditional independence testing is an important problem, especially in Bayesian network learning and causal discovery. Due to the curse of dimensionality, testing for conditional independence of continuous variables is particularly challenging. We propose a Kernel-based Conditional Independence test (KCI-test), by constructing an appropriate test statistic and deriving its asymptotic distribution under the null hypothesis of conditional independence. The proposed method is computationally efficient and easy to implement. Experimental results show that it outperforms other methods, especially when the conditioning set is large or the sample size is not very large, in which case other methods encounter difficulties.},
+   author = {Kun Zhang and Jonas Peters and Dominik Janzing and Bernhard Schölkopf},
+   title = {Kernel-based Conditional Independence Test and Application in Causal Discovery}
+}
+@article{,
+   abstract = {Causal discovery from data affected by unobserved variables is an important but difficult problem to solve. The effects that unobserved variables have on the relationships between observed variables are more complex in nonlinear cases than in linear cases. In this study, we focus on causal additive models in the presence of unobserved variables. Causal additive models exhibit structural equations that are additive in the variables and error terms. We take into account the presence of not only un-observed common causes but also unobserved intermediate variables. Our theoretical results show that, when the causal relationships are nonlinear and there are unobserved variables, it is not possible to identify all the causal relationships between observed variables through regression and independence tests. However, our theoretical results also show that it is possible to avoid incorrect inferences. We propose a method to identify all the causal relationships that are theoretically possible to identify without being biased by unobserved variables. The empirical results using artificial data and simulated functional magnetic resonance imaging (fMRI) data show that our method effectively infers causal structures in the presence of unob-served variables.},
+   author = {Takashi Nicholas Maeda and Shohei Shimizu},
+   title = {Causal Additive Models with Unobserved Variables}
+}
+@article{,
+   abstract = {Causal discovery aims at revealing causal relations from observational data, which is a fundamental task in science and engineering. We describe causal-learn, an open-source Python library for causal discovery. This library focuses on bringing a comprehensive collection of causal discovery methods to both practitioners and researchers. It provides easy-to-use APIs for non-specialists, modular building blocks for developers, detailed documentation for learners, and comprehensive methods for all. Different from previous packages in R or Java, causal-learn is fully developed in Python, which could be more in tune with the recent preference shift in programming languages within related communities. The library is available at https://github.com/py-why/causal-learn.},
+   author = {Yujia Zheng and Biwei Huang and Wei Chen and Joseph Ramsey and Ruichu Cai and Shohei Shimizu and Peter Spirtes and Kun Zhang},
+   keywords = {Causal Discovery,Conditional Independence,Independence,Ma-chine Learning,Python},
+   title = {Causal-learn: Causal Discovery in Python Mingming Gong 4},
+   url = {https://github.com/py-why/causal-learn.}
+}
+@book{,
+   author = {Peter Spirtes and Clark Glymour and Richard Scheines},
+   title = {Causation, Prediction, and Search}
+}
+@article{,
+   abstract = {The discovery of causal relationships between a set of observed variables is a fundamental problem in science. For continuous-valued data linear acyclic causal models with additive noise are often used because these models are well understood and there are well-known methods to fit them to data. In reality, of course, many causal relationships are more or less nonlinear, raising some doubts as to the applicability and usefulness of purely linear methods. In this contribution we show that the basic linear framework can be generalized to nonlinear models. In this extended framework, nonlinearities in the data-generating process are in fact a blessing rather than a curse, as they typically provide information on the underlying causal system and allow more aspects of the true data-generating mechanisms to be identified. In addition to theoretical results we show simulations and some simple real data experiments illustrating the identification power provided by non-linearities.},
+   author = {Patrik O Hoyer and Dominik Janzing and Joris Mooij and Jonas Peters and Bernhard Schölkopf},
+   title = {Nonlinear causal discovery with additive noise models}
+}
+@article{Peters2014,
+   abstract = {We consider the problem of learning causal directed acyclic graphs from an observational joint distribution. One can use these graphs to predict the outcome of interventional experiments , from which data are often not available. We show that if the observational distribution follows a structural equation model with an additive noise structure, the directed acyclic graph becomes identifiable from the distribution under mild conditions. This constitutes an interesting alternative to traditional methods that assume faithfulness and identify only the Markov equivalence class of the graph, thus leaving some edges undirected. We provide practical algorithms for finitely many samples, RESIT (regression with subsequent independence test) and two methods based on an independence score. We prove that RESIT is correct in the population setting and provide an empirical evaluation.},
+   author = {Jonas Peters and Joris M Mooij and Dominik Janzing and Bernhard Schölkopf},
+   journal = {Journal of Machine Learning Research},
+   keywords = {Bayesian networks,additive noise,causal inference,causal minimality,identifiability,structural equation models},
+   pages = {2009-2053},
+   title = {Causal Discovery with Continuous Additive Noise Models},
+   volume = {15},
+   year = {2014}
+}
+@article{Chickering2002,
+   abstract = {In this paper we prove the so-called "Meek Conjecture". In particular, we show that if a DAG H is an independence map of another DAG G, then there exists a finite sequence of edge additions and covered edge reversals in G such that (1) after each edge modification H remains an independence map of G and (2) after all modifications G = H. As shown by Meek (1997), this result has an important consequence for Bayesian approaches to learning Bayesian networks from data: in the limit of large sample size, there exists a two-phase greedy search algorithm that-when applied to a particular sparsely-connected search space-provably identifies a perfect map of the generative distribution if that perfect map is a DAG. We provide a new implementation of the search space, using equivalence classes as states, for which all operators used in the greedy search can be scored efficiently using local functions of the nodes in the domain. Finally, using both synthetic and real-world datasets, we demonstrate that the two-phase greedy approach leads to good solutions when learning with finite sample sizes.},
+   author = {David Maxwell Chickering},
+   journal = {Journal of Machine Learning Research},
+   pages = {507-554},
+   title = {Optimal Structure Identification With Greedy Search},
+   volume = {3},
+   year = {2002}
+}
+@article{Friedman2018,
+   abstract = {We consider the problem of estimating sparse graphs by a lasso penalty applied to the inverse covariance matrix. Using a coordinate descent procedure for the lasso, we develop a simple algorithm that is remarkably fast: in the worst cases, it solves a 1000 node problem (~500,000 parameters) in about a minute, and is 50 to 2000 times faster than competing methods. It also provides a conceptual link between the exact problem and the approximation suggested by Meinhausen and Buhlmann (2006). We illustrate the method on some cell-signaling data from proteomics.},
+   author = {Jerome Friedman and Trevor Hastie and Robert Tibshirani},
+   month = {10},
+   title = {Sparse inverse covariance estimation with the lasso},
+   url = {https://arxiv.org/abs/0708.3517v1},
+   year = {2018}
+}
+@article{Sachs2005,
+   abstract = {Machine learning was applied for the automated derivation of causal influences in cellular signaling networks. This derivation relied on the simultaneous measurement of multiple phosphorylated protein and phospholipid components in thousands of individual primary human immune system cells. Perturbing these cells with molecular interventions drove the ordering of connections between pathway components, wherein Bayesian network computational methods automatically elucidated most of the traditionally reported signaling relationships and predicted novel interpathway network causalities, which we verified experimentally. Reconstruction of network models from physiologically relevant primary single cells might be applied to understanding native-state tissue signaling biology, complex drug actions, and dysfunctional signaling in diseased cells.},
+   author = {Karen Sachs and Omar Perez and Dana Pe'er and Douglas A. Lauffenburger and Garry P. Nolan},
+   doi = {10.1126/SCIENCE.1105809},
+   issn = {1095-9203},
+   issue = {5721},
+   journal = {Science (New York, N.Y.)},
+   keywords = {Algorithms,Artificial Intelligence,Bayes Theorem*,Biological*,CD4-Positive T-Lymphocytes / metabolism*,Cyclic AMP-Dependent Protein Kinases / metabolism,Extracellular Signal-Regulated MAP Kinases / metabolism,Flow Cytometry,Garry P Nolan,Humans,Intracellular Signaling Peptides and Proteins / metabolism*,Karen Sachs,MEDLINE,Mathematics,Models,NCBI,NIH,NLM,National Center for Biotechnology Information,National Institutes of Health,National Library of Medicine,Non-P.H.S.,Non-U.S. Gov't,Omar Perez,P.H.S.,Phospholipids / metabolism,Phosphoproteins / metabolism,Phosphorylation,Protein Kinase C / metabolism,Protein Serine-Threonine Kinases / metabolism,Proto-Oncogene Proteins / metabolism,Proto-Oncogene Proteins c-akt,PubMed Abstract,RNA,Research Support,Signal Transduction*,Small Interfering,U.S. Gov't,doi:10.1126/science.1105809,pmid:15845847},
+   month = {4},
+   pages = {523-529},
+   pmid = {15845847},
+   publisher = {Science},
+   title = {Causal protein-signaling networks derived from multiparameter single-cell data},
+   volume = {308},
+   url = {https://pubmed.ncbi.nlm.nih.gov/15845847/},
+   year = {2005}
+}
+@book{,
+   abstract = {In this chapter we describe how causal graphs can be used for processing miss­ ing data. In particular, we model the missingness process using causal graphs and present graph-based definitions of various missingness mechanisms. Given a graph and a target quantity to be estimated, we present various methods for determining if and how a consistent estimate of the quantity can be computed. We further present techniques for detecting misspecifications in the model. We demonstrate all of the above using toy examples and small graphs, thus making it easy to understand the various intricacies and nuances of graph-based missing data analysis.},
+   author = {Karthika Mohan},
+   title = {Probabilistic and Causal Inference: The Works of Judea Pearl}
+}
+@misc{Muzellec2020,
+   author = {Boris Muzellec and Julie Josse and Claire Boyer and Marco Cuturi},
+   issn = {2640-3498},
+   month = {11},
+   pages = {7130-7140},
+   publisher = {PMLR},
+   title = {Missing Data Imputation using Optimal Transport},
+   url = {https://proceedings.mlr.press/v119/muzellec20a.html},
+   year = {2020}
+}
+@article{You2020,
+   abstract = {Machine learning with missing data has been approached in two different ways, including feature imputation where missing feature values are estimated based on observed values, and label prediction where downstream labels are learned directly from incomplete data. However, existing imputation models tend to have strong prior assumptions and cannot learn from downstream tasks, while models targeting label prediction often involve heuristics and can encounter scalability issues. Here we propose GRAPE, a graph-based framework for feature imputation as well as label prediction. GRAPE tackles the missing data problem using a graph representation, where the observations and features are viewed as two types of nodes in a bipartite graph, and the observed feature values as edges. Under the GRAPE framework, the feature imputation is formulated as an edge-level prediction task and the label prediction as a node-level prediction task. These tasks are then solved with Graph Neural Networks. Experimental results on nine benchmark datasets show that GRAPE yields 20% lower mean absolute error for imputation tasks and 10% lower for label prediction tasks, compared with existing state-of-the-art methods.},
+   author = {Jiaxuan You and Xiaobai Ma and Daisy Yi Ding and Mykel Kochenderfer and Jure Leskovec},
+   issn = {10495258},
+   journal = {Advances in Neural Information Processing Systems},
+   month = {10},
+   publisher = {Neural information processing systems foundation},
+   title = {Handling Missing Data with Graph Representation Learning},
+   volume = {2020-December},
+   url = {https://arxiv.org/abs/2010.16418v1},
+   year = {2020}
+}
+@article{Ma2018,
+   abstract = {Missing data, a common but challenging issue in most studies, may lead to biased and inefficient inferences if handled inappropriately. As a natural and powerful way for dealing with missing data, Bayesian approach has received much attention in the literature. This paper reviews the recent developments and applications of Bayesian methods for dealing with ignorable and non-ignorable missing data. We firstly introduce missing data mechanisms and Bayesian framework for dealing with missing data, and then introduce missing data models under ignorable and non-ignorable missing data circumstances based on the literature. After that, important issues of Bayesian inference, including prior construction, posterior computation, model comparison and sensitivity analysis, are discussed. Finally, several future issues that deserve further research are summarized and concluded.},
+   author = {Zhihua Ma and Guanghui Chen},
+   doi = {10.1016/J.JKSS.2018.03.002/METRICS},
+   issn = {12263192},
+   issue = {3},
+   journal = {Journal of the Korean Statistical Society},
+   keywords = {Bayesian approach,Missing data,Missing data model,Non-ignorable missing data mechanism},
+   month = {9},
+   pages = {297-313},
+   publisher = {Korean Statistical Society},
+   title = {Bayesian methods for dealing with missing data problems},
+   volume = {47},
+   url = {https://link.springer.com/article/10.1016/j.jkss.2018.03.002},
+   year = {2018}
+}
+@article{Chang2021,
+   abstract = {Neural network training and validation rely on the availability of large high-quality datasets. However, in many cases only incomplete datasets are available, particularly in health care applications, where each patient typically undergoes different clinical procedures or can drop out of a study. Since the data to train the neural networks need to be complete, most studies discard the incomplete datapoints, which reduces the size of the training data, or impute the missing features, which can lead to artefacts. Alas, both approaches are inadequate when a large portion of the data is missing. Here, we introduce GapNet, an alternative deep-learning training approach that can use highly incomplete datasets. First, the dataset is split into subsets of samples containing all values for a certain cluster of features. Then, these subsets are used to train individual neural networks. Finally, this ensemble of neural networks is combined into a single neural network whose training is fine-tuned using all complete datapoints. Using two highly incomplete real-world medical datasets, we show that GapNet improves the identification of patients with underlying Alzheimer's disease pathology and of patients at risk of hospitalization due to Covid-19. By distilling the information available in incomplete datasets without having to reduce their size or to impute missing values, GapNet will permit to extract valuable information from a wide range of datasets, benefiting diverse fields from medicine to engineering.},
+   author = {Yu-Wei Chang and Laura Natali and Oveis Jamialahmadi and Stefano Romeo and Joana B. Pereira and Giovanni Volpe},
+   month = {7},
+   title = {Neural Network Training with Highly Incomplete Datasets},
+   url = {https://arxiv.org/abs/2107.00429v1},
+   year = {2021}
+}
+@article{Zhou2024,
+   abstract = {Missing data poses a significant challenge in data science, affecting decision-making processes and outcomes. Understanding what missing data is, how it occurs, and why it is crucial to handle it appropriately is paramount when working with real-world data, especially in tabular data, one of the most commonly used data types in the real world. Three missing mechanisms are defined in the literature: Missing Completely At Random (MCAR), Missing At Random (MAR), and Missing Not At Random (MNAR), each presenting unique challenges in imputation. Most existing work are focused on MCAR that is relatively easy to handle. The special missing mechanisms of MNAR and MAR are less explored and understood. This article reviews existing literature on handling missing values. It compares and contrasts existing methods in terms of their ability to handle different missing mechanisms and data types. It identifies research gap in the existing literature and lays out potential directions for future research in the field. The information in this review will help data analysts and researchers to adopt and promote good practices for handling missing data in real-world problems.},
+   author = {Youran Zhou and Sunil Aryal and Mohamed Reda Bouadjenek},
+   keywords = {Data imputation,Handling missing values in tabular data,MAR,MCAR,MNAR,Missing data,Missing mechanisms},
+   title = {A Comprehensive Review of Handling Missing Data: Exploring Special Missing Mechanisms},
+   url = {https://arxiv.org/html/2404.04905v1},
+   year = {2024}
+}
+@article{Baker2015,
+   author = {Nancy T. Baker and Wesley W. Stone},
+   doi = {10.3133/DS907},
+   issn = {2327-638X},
+   journal = {Data Series},
+   title = {Estimated annual agricultural pesticide use for counties of the conterminous United States, 2008-12},
+   url = {https://pubs.usgs.gov/publication/ds907},
+   year = {2015}
+}

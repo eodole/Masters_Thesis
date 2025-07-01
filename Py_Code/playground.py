@@ -68,7 +68,7 @@ from IPython.display import Image, display
 dot = pydot.Dot(graph_type='digraph')
 
 # Define the edges with weights
-edges = [("A", "B", 2), ("A", "C", 3), ("C", "D", -1)]
+edges = [("A", "B", 2), ("C", "B", 3), ("C", "D", -1), ("B", "D", 5)]
 
 # Add edges and nodes with attributes
 for src, dst, weight in edges:
@@ -82,5 +82,5 @@ for src, dst, weight in edges:
             dot.add_node(node)
 
 # Render and display the graph as an image
-dot.write_png('graph.png')
+dot.write_png('/Users/eodole/Desktop/Masters_Thesis/figures/presentation1/ground_truth_2.png')
 display(Image(filename='graph.png'))

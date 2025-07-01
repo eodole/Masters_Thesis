@@ -14,25 +14,26 @@ from itertools import combinations
 # Helper Function
 def cg_fit(dataset):
     # temp = pc(dataset, 0.05, "fisherz")
-    temp = pc(dataset, 0.05, "kci")
+    temp = pc(dataset, 0.05, "fisherz")
     temp.to_nx_graph()
     print(temp.G.graph)
     return(temp)
 
 
 ##  1) Import Data 
-ground_truth = np.loadtxt("/Users/eodole/Desktop/Masters_Thesis/Py_Code/gen_data/test2.csv", delimiter = ",")
+ground_truth = np.loadtxt("/Users/eodole/Desktop/Masters_Thesis/Py_Code/gen_data/presentation1.2.csv", delimiter = ",")
 
 
 ## Induce Missingness 
 # mcar_data = utils.v_induce_missing_data(ground_truth, 0.2)
 
+
 ## 2 ) Impute Data/ Load Imputed Data 
-imputer = utils.BatchImputation(folder_name="Experiment1")
+imputer = utils.BatchImputation(folder_name="Py_Code/gen_data/pres1")
 
-datasets = imputer.load("Experiment1")
+datasets = imputer.load("Py_Code/gen_data/pres1")
 
-datasets["ground_truth"] = ground_truth
+# datasets["ground_truth"] = ground_truth
 
 
 
@@ -51,7 +52,7 @@ gc = utils.GraphComparison(graph_dict, {0:"A", 1:"B",2:"C", 3:"D"})
 gc.fit()
 
 print(gc.composite_adj_mtrx)
-gc.display_composite("exp1_test_kci")
+gc.display_composite("exp1_test_fisherz_v_structure_data")
 
 
 # fit method 

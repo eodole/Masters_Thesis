@@ -58,3 +58,80 @@ ggplot(mysf)+
 # read in pesticides data 
 pesticidesraw <- readMat("./data/pesticides2010_kgperarea.mat") # the dims dont match need to follow up 
 
+
+### New 30.6 
+
+
+library(readr)
+full_dataset_v1 <- read_csv("Desktop/Masters_Thesis/data/processed/full_dataset_v1.csv")
+View(full_dataset_v1)
+
+missing_by_col <- apply(is.na(full_dataset_v1), 2, sum)
+
+sum(is.na(full_dataset_v1))/(nrow(full_dataset_v1)*ncol(full_dataset_v1))
+# [1] 0.7085253
+
+sum(is.na(full_dataset_v1))
+
+
+library(readr)
+pesticide_data_2010 <- read_csv("Desktop/Masters_Thesis/data/processed/pesticide_data_2010.csv")
+View(pesticide_data_2010)
+
+
+sum(is.na(pesticide_data_2010))/(nrow(pesticide_data_2010) * ncol(pesticide_data_2010))
+# [1] 0.7815698
+
+
+
+missing_fips <- setdiff(full_dataset_v1$fips, pesticide_data_2010$FIPS)
+
+
+# how much missign without pesticides? 
+sum(is.na(full_dataset_v1[,2:60]))/(3142*59)
+
+
+m <- data.frame(Data = c("Full Dataset", 
+                         "Pesticide Only", 
+                         "Demographic and Disease Only"),
+                `Percentage Missing` = c(sum(is.na(full_dataset_v1))/(nrow(full_dataset_v1)*ncol(full_dataset_v1)), 
+                                        sum(is.na(pesticide_data_2010))/(nrow(pesticide_data_2010) * ncol(pesticide_data_2010)), 
+                                        sum(is.na(full_dataset_v1[,2:60]))/(3142*59)))
+
+
+library(stargazer)
+
+stargazer(m, summary = FALSE, rownames = FALSE)
+
+library(naniar)
+
+
+vis_miss(full_dataset_v1[,2:58], warn_large_data = FALSE,show_perc_col = FALSE )
+
+
+## I want to make a missingness graph but for the generated data 
+
+library(readr)
+missing_data <- read_csv("Desktop/Masters_Thesis/Py_Code/gen_data/pres1/five_percent_missing.csv", col_names = FALSE)
+View(presentation1_2)
+
+missing_data = missing_data %>% rename(
+  A = X2, 
+  B= X3, 
+  C= X4, 
+  D =X5
+)
+missing_data = missing_data[2:1001,2:5 ]
+
+vis_miss(missing_data)
+
+sum(complete.cases(missing_data))/1000
+
+
+## interesting visualization of compelte cases 
+p_missing = seq(0,1, by =0.05)
+P_complete_cases = (1000*(1-p_missing)^4)/1000
+> plot(p_missing, P_complete_cases)
+
+
+
