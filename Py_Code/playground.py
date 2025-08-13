@@ -61,26 +61,31 @@ from fancyimpute import SoftImpute
 # soft_imputer.fit_transform(X)
 
 
-import pydot
-from IPython.display import Image, display
+# import pydot
+# from IPython.display import Image, display
 
-# Create a directed graph in pydot
-dot = pydot.Dot(graph_type='digraph')
+# # Create a directed graph in pydot
+# dot = pydot.Dot(graph_type='digraph')
 
-# Define the edges with weights
-edges = [("A", "B", 2), ("C", "B", 3), ("C", "D", -1), ("B", "D", 5)]
+# # Define the edges with weights
+# edges = [("A", "B", 2), ("C", "B", 3), ("C", "D", -1), ("B", "D", 5)]
 
-# Add edges and nodes with attributes
-for src, dst, weight in edges:
-    edge = pydot.Edge(src, dst, label=str(weight), color='red', fontsize='10')
-    dot.add_edge(edge)
+# # Add edges and nodes with attributes
+# for src, dst, weight in edges:
+#     edge = pydot.Edge(src, dst, label=str(weight), color='red', fontsize='10')
+#     dot.add_edge(edge)
 
-    # Ensure all nodes are styled
-    for node_name in (src, dst):
-        if not dot.get_node(node_name):
-            node = pydot.Node(node_name, style="filled", fillcolor="white", color="black", shape="circle", fontsize='12')
-            dot.add_node(node)
+#     # Ensure all nodes are styled
+#     for node_name in (src, dst):
+#         if not dot.get_node(node_name):
+#             node = pydot.Node(node_name, style="filled", fillcolor="white", color="black", shape="circle", fontsize='12')
+#             dot.add_node(node)
 
-# Render and display the graph as an image
-dot.write_png('/Users/eodole/Desktop/Masters_Thesis/figures/presentation1/ground_truth_2.png')
-display(Image(filename='graph.png'))
+# # Render and display the graph as an image
+# dot.write_png('/Users/eodole/Desktop/Masters_Thesis/figures/presentation1/ground_truth_2.png')
+# display(Image(filename='graph.png'))
+
+
+data = utils.generate_full_data(10)
+
+print(np.apply_along_axis(utils.mar_threshold_data, axis=1,arr =data,  threshold = 0))

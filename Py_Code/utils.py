@@ -116,9 +116,42 @@ def cellwise_induce_missing_data(cell, prob):
     else: 
         return cell 
 
-induce_missing_data = np.vectorize(cellwise_induce_missing_data, excluded = {2, "prob"})
+induce_missing_data = np.vectorize(cellwise_induce_missing_data, excluded = {1, "prob"})
 
 
+# function to induce MNAR data with threshold method
+def mnar_threshold_data_helper(cell, threshold): 
+    ''' 
+    cell: single cell in dataset to induce missingness on 
+    
+    threshold: number that cell value should be compared to, as a rule of thumb use 1 sd above mean 
+    (why? arbitrary idk)
+    
+    '''
+    if cell < threshold: 
+        return None 
+    else:
+        return cell 
+    
+mnar_threshold_data = np.vectorize(mnar_threshold_data_helper, excluded={1, "threshold"})
+
+# maybe for mar i need to look at each row, and have one of the rows affect the others
+# for example for each row if A < threshold then B is removed or something 
+
+def mar_threshold_data(row, threshold): 
+    ''' 
+    Helper function for 
+    np.apply_along_axis(funct, arr, axis =1, kwargs)
+    '''
+    # first will affect the third 
+    print(row)
+    if row[0] < threshold: 
+        row[3] = None 
+    
+    return row
+
+
+    
 
 
 class GraphComparison:

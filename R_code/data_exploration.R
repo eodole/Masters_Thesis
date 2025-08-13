@@ -133,5 +133,10 @@ p_missing = seq(0,1, by =0.05)
 P_complete_cases = (1000*(1-p_missing)^4)/1000
 > plot(p_missing, P_complete_cases)
 
+## which of the demographic data are missing to a siginicant degree 
+apply(is.na(full_dataset_v1), 2, sum)/3142
+
+
+#### Investigating the quesiton: are there states iwth complete reporting? 
 
 
