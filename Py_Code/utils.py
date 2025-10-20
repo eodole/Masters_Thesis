@@ -6,6 +6,7 @@ import pandas as pd
 from sklearn.impute import * 
 import statsmodels.api as sm
 from fancyimpute import SoftImpute
+import random
 
 
 
@@ -327,3 +328,61 @@ class BatchImputation:
         self.imp_dataset_dict["mice_data"] = np.loadtxt(f"{self.thesis_path}/{foldername}/mice_data.csv", delimiter = ",")
         self.imp_dataset_dict["matrix_completion"] = np.loadtxt(f"{self.thesis_path}/{foldername}/mtrx_completion_data.csv", delimiter = ",")         
         return self.imp_dataset_dict
+    
+
+
+class RandomGraph: 
+    """
+    Want to generate random data from a causal graph 
+    """ 
+
+    def __init__(self, d_feats, connection_prob):
+        self.d = d_feats
+        self.p = connection_prob
+        
+
+        self.G, self.labels  = self.random_er_dag(self.d, self.p)
+        self.A, self.W = self.assign_weights(self.G)
+        
+
+    def random_er_dag(self, v, p):
+        """
+        Generate a random Erdos–Rényi DAG with n nodes and edge probability p.
+        """
+        G = nx.DiGraph()
+        G.add_nodes_from(range(v))
+
+        # Assign a random topological ordering of nodes
+        nodes = list(range(v))
+        random.shuffle(nodes)
+
+        # Only allow edges from earlier to later in this ordering
+        for i in range(v):
+            for j in range(i + 1, v):
+                if random.random() < p:
+                    G.add_edge(nodes[i], nodes[j])
+
+        return G, nodes
+    
+    def assign_weights(self, G):
+
+        A =  nx.to_numpy_array(G)
+    
+        r_weights = np.random.rand(A.shape[0],A.shape[1])
+        
+        return(A, np.multiply(A,r_weights))
+    
+    def gen_data(self, n_samples):
+        weights = self.W
+        d_feats = self.d
+        data = np.ones(shape=(n_samples, d_feats))
+        noise = np.random.normal(size=(n_samples, d_feats))
+
+        return np.add(noise, np.matmul(data, weights))
+
+    def draw(self):
+        nx.draw_networkx(self.G, with_labels=True, pos=nx.planar_layout(self.G))
+
+    def get_adj(self):
+        return self.A
+    
