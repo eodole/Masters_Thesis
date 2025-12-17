@@ -8,17 +8,9 @@ library(tidyr)
 library(latex2exp)
 set.seed(1000)
 
-# generate_dataset <- function(matrix){
-#   # would be nice to have a function that generates any data set based on a linear model given an adjacency matrix 
-# }
-
-# p = 0.5 # prob of mcar missingness
 
 full_data <- gen_dataset1(10000)
 # obs_data <- apply(full_data, c(1,2), induce_na, p_missing = p)
-
-
-# want to impute the obs_data using mice defaults 
 # default_imp <- complete(mice(obs_data, m =1, maxit = 10, method = 'norm', seed = 123))
 
 # want to impute the obs_data using the structure as given in gen_dataset1 
@@ -31,16 +23,10 @@ full_data <- gen_dataset1(10000)
 #                 0,0,1,0), ncol = 4, byrow = T)
 # causal_imp <- complete(mice(obs_data, m=1, maxit = 10, method = 'norm', seed = 123, predictorMatrix = pred))
 # 
-# # want to then evaluate them in some way 
-#   #-first could use compare their mse with the full data 
 # 
-# # compare_to_gt(full_data, default_imp, obs_data)
-# # compare_to_gt(full_data, causal_imp, obs_data)
-# 
-# 
+
 # 
 # ## experiment time: single rep 
-# # something interesting might be to vary the p_missing and then graph the mse of the two datasets 
 # 
 # 
 # mse_plain_normpred <- c()

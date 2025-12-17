@@ -10,34 +10,23 @@ from causallearn.search.ScoreBased.GES import ges
 from causallearn.utils.GraphUtils import GraphUtils
 
 
-figure_path = "figures/toy_model2"
-gen_data_path = "Py_Code/gen_data/toy_model2_mar"
+figure_path = "figures/pres1"
+gen_data_path = "Py_Code/gen_data/pres1"
 
 
 
 
 ## Initial Set Up 
-# ground_truth = utils.generate_full_data(1000,True, "toy_model2_mar/ground_truth")
+# ground_truth = utils.generate_full_data(1000,True, "five_percent_missing.csv")
 
 # ## Induce Missingness 
-# # > qnorm(0.2, 1,1)
-# # [1] 0.1583788
-# missing_data = np.apply_along_axis(utils.mar_threshold_data, arr = ground_truth, axis = 1, threshold = 0.158)
-# pd.DataFrame(missing_data).to_csv(f"{gen_data_path}/twenty_percent_missing.csv")
 
+# pd.DataFrame(missing_data).to_csv(f"{gen_data_path}/five_percent_missing.csv")
 
-
-
-
-
-# imp  = utils.BatchImputation(missing_data, True, "Py_Code/gen_data/toy_model2_mar")
+# imp  = utils.BatchImputation(missing_data, True, "Py_Code/gen_data/pres1")
 
 # imp_dict = imp.impute()
 
-
-
-## Experiment with new Ground Truth 
-# ground_truth = utils.generate_full_data(1000,True, "test_pres1")
 
 ## Load Data 
 
@@ -53,42 +42,6 @@ imp_dict = imp.load(gen_data_path)
 H = nx.DiGraph()
 H.add_weighted_edges_from([("A", "B", 2), ("C", "B", 3), ("C", "D", -1), ("B", "D", 5)])
 
-# def draw_ground_truth():
-#     pos = nx.planar_layout(H)
-#     nx.draw_networkx_nodes(H, pos, 
-#                         node_size=700,
-#                             node_color="white",
-#                             edgecolors='black',       # Outline color
-#                             linewidths=1.5
-#                             )
-
-#     nx.draw_networkx_labels(H, pos )
-
-#     edge_labels = nx.get_edge_attributes(H, "weight")
-#     nx.draw_networkx_edges(
-#                 H, pos,
-#                 arrowstyle='->',
-#                 arrowsize=30,
-#                 # connectionstyle='arc3,rad=0.2',
-#                 edge_color="red"
-#             )
-#     nx.draw_networkx_edge_labels(
-#         H, pos, edge_labels
-#     )
-
-#     ax = plt.gca()
-#     ax.margins(0.08)
-#     plt.axis("off")
-#     plt.tight_layout()
-# plt.show()
-
-# plt.savefig(f"{figure_path}/ground_truth.png")
-
-
-## I can just use this to draw the ground truth on top lol 
-# draw_ground_truth()
-
-# plt.show()
 
 
 
